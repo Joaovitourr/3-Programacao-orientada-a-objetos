@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação orientada a objetivos</title>
+</head>
+<body>
+
+    <script>
+
+class Carro{
+    constructor(cor, portas, marca){
+        this.cor = cor;
+        this.portas = portas;
+        this.marca = marca;
+        this.ligado = false;
+        this.km = 0;
+        this.combustivel = 10;
+     
+    }
+
+    info(){
+        console.log(this.cor);
+        console.log(this.portas);
+        console.log(this.marca);
+        console.log( "ligado? " + (this.ligado ? "Sim" : "Nao"));
+        console.log(this.km);
+        console.log(this.combustivel);
+        console.log("------------------")
+   
+        
+    }
+        // funcao dentro do objeto
+
+
+        liga(){
+            this.ligado = true;
+        }
+
+        desligar(){
+            this.ligado = false;
+        }
+      set setCombo(v){
+        if(v < 0 || v > 100){
+            alert("valor invalido")
+        } else {
+            this.combustivel = v;
+          console.log("combustivel alterado, valor atual" + this.combustivel )
+
+        }
+         
+       }
+
+      get ObterCombustivel(){
+          return this.combustivel;
+       }
+    
+}
+let c1 = new Carro("Azul", "4", "ferrari",);
+let c2 = new Carro("verde", "2", "lamborghini");
+let c3 = new Carro("rosa", "4", "bugatti");
+
+c1.setCombo=101;
+
+console.log(c1.combustivel, " de combustivel");
+c1.info();
+
+
+
+//c2.liga();
+//c3.liga();
+
+//console.log("Antes da mudanca de atributos. --- ")
+
+//c1.cor = "Preto com azul"; // passa a referir ao objeto pelo nome da variavel;
+//c2.cor = "Azul com amarelo"; // passa a referir ao objeto pelo nome da variavel;
+//c3.cor = "Roxo com branco"; // passa a referir ao objeto pelo nome da variavel;
+
+
+
+//c2.info();
+//c3.info();
+
+
+    </script>
+</body>
+</html>
